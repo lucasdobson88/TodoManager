@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-sm-6 col-md-4" *ngFor="let task of tasks">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ task.title }}</h5>
+        <p class="card-text">{{ task.description }}</p>
+        <button
+          class="btn btn-primary edit-button"
+          (click)="onEditButtonClick(task)"
+        >
+          Edit
+        </button>
+        <button
+          class="btn btn-primary delete-button"
+          (click)="onDeleteButtonClick(task.id)"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

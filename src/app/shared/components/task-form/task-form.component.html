@@ -1,0 +1,64 @@
+<div class="card">
+  <!-- <img src="..." class="card-img-top" alt="..."> -->
+  <div class="card-body">
+    <form [formGroup]="form">
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="titleInput"
+          placeholder="Enter title here.."
+          formControlName="title"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Description</label>
+        <textarea
+          class="form-control"
+          id="description"
+          rows="3"
+          placeholder="Enter description here.."
+          formControlName="description"
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Priority</label>
+        <select
+          class="form-control"
+          id="prioritySelectBox"
+          formControlName="priority"
+        >
+          <option
+            *ngFor="let item of priorityLevels"
+            value="{{ item.value }}"
+            >{{ item.name }}</option
+          >
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Type</label>
+        <select class="form-control" id="typeSelectBox" formControlName="type">
+          <option *ngFor="let type of types" value="{{ type }}">{{
+            type
+          }}</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <button
+            class="btn btn-primary save-button"
+            (click)="onSaveButtonClick(form)"
+          >
+            Save
+          </button>
+        </div>
+        <div class="col-md-6" style="text-align: right;">
+          <button class="btn btn-primary">Clear</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
